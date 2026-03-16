@@ -1,48 +1,27 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+def calculator():
+    """Простой калькулятор, выполняющий базовые арифметические операции."""
 
-# Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
+    num1 = float(input("Введите первое число: "))
+    operator = input("Введите оператор (+, -, *, /): ")
+    num2 = float(input("Введите второе число: "))
 
-# Configuration
-wp-config.php
+    if operator == '+':
+        result = num1 + num2
+        print(f"Результат: {num1} + {num2} = {result}")
+    elif operator == '-':
+        result = num1 - num2
+        print(f"Результат: {num1} - {num2} = {result}")
+    elif operator == '*':
+        result = num1 * num2
+        print(f"Результат: {num1} * {num2} = {result}")
+    elif operator == '/':
+        if num2 != 0:  # Проверка деления на ноль
+            result = num1 / num2
+            print(f"Результат: {num1} / {num2} = {result}")
+        else:
+            print("Ошибка: Деление на ноль недопустимо.")
+    else:
+        print("Ошибка: Неверный оператор. Используйте +, -, *, /.")
 
-# Example themes
-/wp-content/themes/twenty*/
-
-# Example plugin
-/wp-content/plugins/hello.php
-
-# Uploads
-/wp-content/uploads/
-
-# Log files
-*.log
-
-# htaccess
-/.htaccess
-
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
-
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+# Вызываем функцию калькулятора
+calculator()
